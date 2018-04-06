@@ -60,8 +60,7 @@
                 var extras = sourceData.Extras;
                 var reBox = sourceData.Recipeboxes;
                 var vegBox = sourceData.Vegboxes;
-                var nr = sourceData[1].Veg;
-console.log(nr);
+
                 // TODO: Build data visualisation
 
                 var myChart = document.getElementById('myChart').getContext('2d');
@@ -72,7 +71,7 @@ console.log(nr);
                     datasets: 
                       {
                           label: 'Vegetables',
-                          data: nr
+                          data: [12, 19, 3, 5, 2, 3]
                       }
                   },
                   options: {},
