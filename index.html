@@ -55,21 +55,21 @@
             }).then(function (data) {
               console.log(data);
               sourceData = data;
-                var veg = sourceData[0].Veg;
-                var meat = sourceData[1].Meat;
-                var extras = sourceData[2].extras;
-                var reBox = [];
-                var vegBox = [];
-console.log(veg);
-
+                var veg = sourceData.Veg;
+                var meat = sourceData.Meat;
+                var extras = sourceData.Extras;
+                var reBox = sourceData.Recipeboxes;
+                var vegBox = sourceData.Vegboxes;
+                var nr = sourceData.Veg[1];
+console.log(nr);
                 // TODO: Build data visualisation
 
                 var myChart = document.getElementById('myChart').getContext('2d');
                 var productChart = new Chart (myChart, {
                   type: 'bar',
                   data: {
-                    labels: ['Vegetable', 'Meat', 'Extras', 'Recipe boxes', 'Veg boxes'],
-                    datasets: []
+                    labels: veg, meat, extras, reBox, vegBox,
+                    datasets: nr
                   },
                   options: {},
                 });
