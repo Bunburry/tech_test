@@ -54,7 +54,13 @@
                 return body.json();
             }).then(function (data) {
               console.log(data);
-                sourceData = data;
+              sourceData = data;
+                var veg = sourceData[0].Veg;
+                var meat = sourceData[1].Meat;
+                var extras = sourceData[2].extras;
+                var reBox = [];
+                var vegBox = [];
+console.log(veg);
 
                 // TODO: Build data visualisation
 
