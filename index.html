@@ -5,6 +5,7 @@
         <title>Riverford Data Analytics</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="js/Chart.bundle.js"></script>
+        <script type="text/javascript" src="data.json"></script>
         <style type="text/css">
             /* Chart.js */
             @-webkit-keyframes chartjs-render-animation {
@@ -35,13 +36,16 @@
         <h1>Riverford Data Analytics</h1>
 
         <!-- TODO Add HTML containers for data visualisation -->
+        <div class="container">
+          <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
 
         <script>
             var sourceData;
 
             // Initial data load
-            fetch("data.json", {
-                method: "GET",
+            fetch('data.json', {
+                method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -49,9 +53,20 @@
             }).then(function (body) {
                 return body.json();
             }).then(function (data) {
+              console.log(data);
                 sourceData = data;
 
                 // TODO: Build data visualisation
+
+                var myChart = document.getElementById('myChart').getContext('2d');
+                var productChart = new Chart (myChart, {
+                  type: 'bar',
+                  data: {
+                    labels: ['Vegetable', 'Meat', 'Extras', 'Recipe boxes', 'Veg boxes'],
+                    datasets: []
+                  },
+                  options: {},
+                });
 
             });
 
