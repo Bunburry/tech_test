@@ -67,12 +67,23 @@
                 var productChart = new Chart (myChart, {
                   type: 'bar',
                   data: {
-                    labels: veg, meat, extras, reBox, vegBox,
+                    labels: sourceData,
                     datasets: [
                       {
-                          label: 'Products',
-                          data: [12, 19, 3, 5, 2, 3]
-                      }
+                          data: veg
+                      },
+                      {
+                          data: meat
+                      },
+                      {
+                          data: extras
+                      },
+                      {
+                          data: regBox
+                      },
+                      {
+                          data: vegBox
+                      },
                     ]
                   },
                   options: {},
