@@ -68,8 +68,12 @@ console.log(nr);
                 var productChart = new Chart (myChart, {
                   type: 'bar',
                   data: {
-                    labels: veg, meat, extras, reBox, vegBox,
-                    datasets: nr
+                    labels: veg,
+                    datasets: 
+                      {
+                          label: 'Vegetables',
+                          data: nr
+                      }
                   },
                   options: {},
                 });
